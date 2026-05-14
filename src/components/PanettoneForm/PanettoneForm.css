@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════════════════
+   PANETTONE FORM
+═══════════════════════════════════════════════════ */
+
+.pform {
+  margin-top: 2px;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  background: var(--color-bg);
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.pform__header {
+  padding: 3rem 3rem 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2rem;
+  align-items: start;
+}
+
+.pform__eyebrow {
+  grid-column: 1 / -1;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pform__eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.pform__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.1;
+  grid-column: 1 / -1;
+}
+
+.pform__sub {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  grid-column: 1 / -1;
+  max-width: 50ch;
+}
+
+/* ── Body ───────────────────────────────────────── */
+
+.pform__body {
+  padding: 2.5rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Fila ───────────────────────────────────────── */
+
+.pform__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ── Field ──────────────────────────────────────── */
+
+.pform__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pform__label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  transition: color 0.2s;
+}
+
+.pform__field:focus-within .pform__label {
+  color: var(--color-accent);
+}
+
+.pform__input {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.pform__input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
+.pform__input:focus {
+  border-color: var(--color-accent);
+  background: rgba(200, 145, 58, 0.03);
+}
+
+.pform__field.error .pform__input {
+  border-color: #c04a3a;
+}
+
+/* Select */
+.pform__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a6e62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.pform__select option {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* Date */
+input[type='date'].pform__input::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) sepia(1) saturate(2) hue-rotate(10deg);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+input[type='date'].pform__input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Textarea */
+.pform__textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.7;
+}
+
+/* Error msg */
+.pform__error {
+  font-size: 0.7rem;
+  color: #c04a3a;
+  letter-spacing: 0.05em;
+}
+
+.pform__optional {
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-border);
+  font-size: 0.75rem;
+}
+
+/* ── Actions ────────────────────────────────────── */
+
+.pform__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pform__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pform__btn--wa {
+  background: #25D366;
+  color: #fff;
+}
+
+.pform__btn--wa:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.pform__btn--mail {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.pform__btn--mail:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* ── Sent ───────────────────────────────────────── */
+
+.pform__sent {
+  font-size: 0.82rem;
+  color: #25D366;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(37, 211, 102, 0.2);
+  background: rgba(37, 211, 102, 0.04);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .pform__header,
+  .pform__body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .pform__row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .pform__actions {
+    flex-direction: column;
+  }
+
+  .pform__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

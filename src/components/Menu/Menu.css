@@ -1,0 +1,140 @@
+.menu {
+  padding: 8rem 0;
+  background:
+    linear-gradient(
+      to bottom,
+      var(--color-bg),
+      var(--color-surface)
+    );
+}
+
+.menu__intro {
+  max-width: 760px;
+  margin-bottom: 5rem;
+}
+
+.menu__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.2rem;
+}
+
+.menu__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.menu__text {
+  color: var(--color-muted);
+  line-height: 1.9;
+  max-width: 60ch;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.menu__card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.menu__card-header {
+  margin-bottom: 2rem;
+}
+
+.menu__label {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.menu__heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.menu__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu__item.small {
+  padding: 1rem 0;
+}
+
+.menu__item:last-child {
+  border-bottom: none;
+}
+
+.menu__item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu__item-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.menu__price {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.menu__description {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 55ch;
+}
+
+@media (max-width: 992px) {
+
+  .menu__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .menu {
+    padding: 5rem 0;
+  }
+
+  .menu__card {
+    padding: 1.8rem;
+  }
+
+  .menu__item-top {
+    gap: 1rem;
+  }
+
+  .menu__heading {
+    font-size: 1.7rem;
+  }
+}
