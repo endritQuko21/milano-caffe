@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './PanettoneForm.css';
 
-const WHATSAPP_NUMBER = '34972612003';
+//const WHATSAPP_NUMBER = '34972612003';
+const WHATSAPP_NUMBER = '642411299';
 const EMAIL_ADDRESS   = 'milanocaffe2015@gmail.com';
 
 const VARIETIES = [
@@ -35,15 +36,36 @@ function formatDate(iso) {
 
 function buildWhatsApp(fields) {
   const msg = [
-    `🍞 *Pedido de Panettone — Milano Caffè*`,
-    ``,
-    `👤 *Nombre:* ${fields.nombre} ${fields.apellidos}`,
-    `📧 *Correo:* ${fields.correo}`,
-    `📱 *Móvil:* ${fields.movil}`,
-    `🎂 *Variedad:* ${fields.variedad}`,
-    `📅 *Fecha recogida:* ${formatDate(fields.fecha)}`,
-    fields.comentario ? `💬 *Comentario:* ${fields.comentario}` : '',
-  ].filter(Boolean).join('\n');
+    `*MILANO CAFFÈ*`,
+    `*Confirmación de pedido*`,
+    `━━━━━━━━━━━━━━`,
+
+    `⚠️ *Importante*`,
+    `El pedido no queda confirmado hasta que nuestro equipo te contacte por WhatsApp.`,
+    `Te avisaremos en cuanto esté validado.`,
+    `━━━━━━━━━━━━━━`,
+
+    `🧾 *Pedido*`,
+    `🍰 Panettone artesanal`,
+    `• Variedad: *${fields.variedad}*`,
+    `• Recogida: *${formatDate(fields.fecha)}*`,
+    `━━━━━━━━━━━━━━`,
+
+    `👤 *Cliente*`,
+    `${fields.nombre} ${fields.apellidos}`,
+    `${fields.correo}`,
+    `${fields.movil}`,
+
+    fields.comentario && `━━━━━━━━━━━━━━`,
+    fields.comentario && `📝 *Notas*`,
+    fields.comentario && `${fields.comentario}`,
+
+    `━━━━━━━━━━━━━━`,
+    `🙏 *Gracias por tu pedido*`,
+    `Te contactaremos en breve 🤍`,
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
