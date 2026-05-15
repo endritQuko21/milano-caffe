@@ -2,8 +2,9 @@ import { useState } from 'react';
 import './PanettoneForm.css';
 
 //const WHATSAPP_NUMBER = '34972612003';
+//const EMAIL_ADDRESS   = 'milanocaffe2015@gmail.com';
 const WHATSAPP_NUMBER = '642411299';
-const EMAIL_ADDRESS   = 'milanocaffe2015@gmail.com';
+const EMAIL_ADDRESS   = 'endritquko@gmail.com';
 
 const VARIETIES = [
   'Chocolate negro 70%',
